@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        {% for object in object_list %}
+          <a href="{{ object.get_absolute_url }}">
+          <div class="card">
+            <h3 class="card-title">{{ object.title }}</h3>
+            <p class="card-publish">{{ object.publish_date }}</p>
+            <i class="fas fa-clock"></i>
+          </div>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock content %}
