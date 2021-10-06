@@ -7,7 +7,6 @@ from posts.views import (PostListView, PostDetailView, PostCreateView, PostUpdat
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
     path('', PostListView.as_view(), name='list'),
     path('create/', PostCreateView.as_view(), name='create'),
     path('<slug>/', PostDetailView.as_view(), name='detail'),

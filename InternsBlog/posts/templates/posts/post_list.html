@@ -1,13 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="redirect">
+  <a href="/create/">
+    <button type="submit"><i class="fas fa-solid fa-plus"></i> Create</button>
+  </a>
+</div>
+ 
     <div class="container">
         {% for object in object_list %}
           <a href="{{ object.get_absolute_url }}">
           <div class="card">
             <h3 class="card-title">{{ object.title }}</h3>
             <p class="card-publish">{{ object.publish_date }}</p>
-            <i class="fas fa-clock"></i>
+          </hr>
+            <p class="views">
+              <span><i class="fas fa-solid fa-clock"> </i> 3 min lectura</span>
+              <span><i class="fas fa-solid fa-comment"> </i> {{ object.get_comment_count }}</span>
+            </p>
           </div>
         </a>
         {% endfor %}
